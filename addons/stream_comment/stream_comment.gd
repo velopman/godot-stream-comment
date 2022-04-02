@@ -163,8 +163,10 @@ func __script_changed(
 	if active_text_edit:
 		__active_text_edit = active_text_edit
 
-	for comment in __comment_queue:
-		var text = comment[0]
-		var escape = comment[1]
+	while !__comment_queue.empty():
+		var current_comment: Array = __comment_queue.pop_front()
+
+		var text: String = current_comment[0]
+		var escape: bool = current_comment[1]
 
 		comment(text, escape)
