@@ -21,7 +21,7 @@ StreamComment="*res://addons/stream_comment/stream_comment.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/stream_comment/plugin.cfg", "res://addons/test/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/stream_comment/plugin.cfg" )
 
 [physics]
 

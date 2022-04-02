@@ -108,10 +108,6 @@ func comment(
 	var active_line: int = state.active_line()
 	var active_indentation: int = state.active_indentation()
 
-	__active_text_edit.cursor_set_line(active_line, false)
-	__active_text_edit.cursor_set_column(0, false)
-	__active_text_edit.insert_text_at_cursor("\n")
-
 	var padding: String = "\t".repeat(active_indentation)
 
 	if !_text.begins_with("#"):
@@ -124,7 +120,7 @@ func comment(
 
 	__active_text_edit.cursor_set_line(active_line, false)
 	__active_text_edit.cursor_set_column(0, false)
-	__active_text_edit.insert_text_at_cursor(padding + _text)
+	__active_text_edit.insert_text_at_cursor("%s%s\n" % [padding, _text])
 
 	state.restore(1)
 
