@@ -10,12 +10,14 @@ func _enter_tree():
 
 		yield(get_tree(), "idle_frame")
 
+		var stream_comment_instance: Node = get_node("/root/StreamComment")
+
 		var editor: EditorInterface = get_editor_interface()
 		var script_editor: ScriptEditor = editor.get_script_editor()
 
 		script_editor.connect(
 			"editor_script_changed",
-			StreamComment,
+			stream_comment_instance,
 			"__script_changed",
 			[script_editor]
 		)
