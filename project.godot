@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="test_plugin"
+config/name="godot-stream-comment"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
